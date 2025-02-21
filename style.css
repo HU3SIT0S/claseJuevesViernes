@@ -1,0 +1,78 @@
+/* En esta parte vamos a modificar el tamaños de los botnes espacio entre ellos y tipo de fuente*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* En esta parte se va a modificar el body */
+body {
+    min-height: 100vh; /* Ajusta al 100% al alto de la pantalla */
+    background-color: rgb(20, 211, 205); /* Color del fondo */
+    display: flex; /* Nos ayuda a alterar sus dimenciones y llenar el espacio disponible */
+    justify-content: center; /* Esta siempre va en combinación con align-items y una nos ayuda a justificar vertical y la otra horizontal al centro */
+    align-items: center; /* Esta siempre va en combinación con justify-content y una nos ayuda a justificar vertical y la otra horizontal al centro */
+}
+
+/* En esta parte se va a modificar el aspecto visual de nuestra calculadora y lo llamamos nuestra primera clase (.calculadora) */
+.calculadora{
+    background-color: rgb(12, 2, 56); /* Esta nos va a modificar las fuente del contenedor  seleccionado */ 
+    color: rgb(192, 216, 233); /* Este nos ayuda a cambiar el color del texto */
+    display: grid; /* Este nos ayuda a crear una cuadricula dentro de nuestra calculadora */
+    grid-template-columns: repeat(4, 1fr); /* Este nos ayuda a distrubuir lo que este dentro de nustra calculadora en 4 columnas */
+    width: 350px; /* Este nos ayuda a dar el ancho de toda nuestra calculadora */
+    padding: 1rem; /* Este nos ayuda a generar un estacio interno eltre los elementos y su borde y 1rem (equivale a 16px) */
+    border-radius: 1rem; /* Este nos ayuda a crear los bordes redondos de nuestra calculadora y 1rem (equivale a 16px) */
+    gap: 0.5rem; /* Esta nos ayuda hacer la ceparacion interna entre cada boton y 0.5rem (equivale a 8px) */
+}
+
+/* En esta parte vamos a modificar la pantalla de resultado de nuestra calculadora y lo llamamos (.pantalla) */
+.pantalla{
+    grid-column: 1/5; /* Nos va a dividir nuesta pantalla de la calculadora en 5 columnas, sin generar espacios entre ellas */
+    background-color: rgb(102, 101, 102); /* Nos va a cambiar le color de nuestra panllata de resulados de la calculadora */
+    padding: 0.5rem; /* Nos ayuda a generar un estacio interno eltre los elementos y su borde y 1rem (equivale a 16px) */
+    font-size: 3rem; /* Nos ayuda a generar el tamaño de nuestra fuente, ejemplo cuando visulizamos el numero cero (0), resultdos */
+    text-align: right; /* Nos ayuda a que el texto se desplace todo a la derecha */ 
+    border-radius: 0.5rem; /* Nos ayuda a generar un borde redondeado a nuestra pantalla de resultado (calculadora) */
+    font-weight: 600; /* Nos ayuda a visualizar que tan grueso sea el borde del texto */
+    margin-bottom: 1rem; /* Nos ayudar a generar un espacio entre el borde de abajo de nustra pantalla de resulado (calculadora) y los botones */
+    /* Solucion, error los numeros sobresalen de la pantalla de la calculadora*/
+    overflow: hidden; /* Este nos ayuda a que los numeroos no sobrepasen las 5 colomnas, ya prediseñadas de las pantalla (calculadora) */
+    overflow-wrap: break-word; /* Este nos ayuda hacer un salto de linea, cuando ya hemos llegado al limite de las columnas ya selecionadas como pantalla (calculaora) */
+}
+
+/* En esta parte vamos a modificar los botones de nuestra calculadora y lo llamamos (.boton) */
+.boton{
+    background-color: rgb(13, 4, 110); /* Nos ayuda a cambiar el color de fondo de nuestros botones */
+    color: rgb(255, 255, 255); /* Nos ayuda a modificar el color del texto de nuestros botones */ 
+    border: 0; /* Nos ayuda a modificar los bordes internos de nustros botones */
+    padding: 1rem;  /* Nos ayuda a generar un estacio interno eltre los elementos y su borde y 1rem (equivale a 16px) */
+    font-size: 1; /* Nos ayuda a generar una tamaño de fuente */
+    display: flex; /* Nos ayuda a alterar sus dimenciones y llenar el espacio disponible */
+    justify-content: center; /* Esta siempre va en combinación con align-items y una nos ayuda a justificar vertical y la otra horizontal al centro */
+    align-items: center; /* Esta siempre va en combinación con justify-content y una nos ayuda a justificar vertical y la otra horizontal al centro */
+    border-radius: .8rem;/* Nos ayuda a generar un borde redondeado a nuestros botones */ 
+    cursor: pointer; /* Nos ayuda a que aparesca una manita, cuando desplazamos el puntero del mause sobre los botones de la calculadora */
+}
+
+/* En esta parte vamos a generar que cambien de color los botones de nuestra calculadora, cuando pasemos el cursor por ellos y lo vamos a llamar (.boton y agregamos :hover) */
+.boton:hover{
+    background-color: rgb(48, 30, 206); /* Este nos ayuda a que genere el  color, cuando pasamos el cursor por los botones de la calculadora */
+}
+
+/* En esta parte vamos a llamar nuestros botones especiales y como estos fueron nombrados ID + nombre en el index(html) aqui los vamos a llamar con (# + el nombre dado en el index(html)) */
+#cero{
+    grid-column: span 2; /* Este nos ayuda a expandir a nuestro boton cero a columnas */
+}
+
+#igual{
+    grid-row: span 2; /* Este nos ayuda a expandir a nuestro boton igual a dos filas */
+    background-color: rgb(139, 16, 5); /* Este nos ayuda a cambiar el color de nuestros boto igual */
+}
+
+/* En esta parte vamos a generar que cambien de color, el boton igual de la calculadora, cuando pasemos el cursor por el y lo vamos a llamar (#igual y agregamos :hover) */
+#igual:hover{
+    background-color: rgb(223, 38, 53); /* Este nos ayuda a que genere el color, cuando pasamos el cursor por el boton igual de la calculadora */
+}
+
